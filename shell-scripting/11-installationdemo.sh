@@ -31,5 +31,5 @@ then
     echo "ERROR:: $R Installing GIT is failed $N"
     exit 1
 else
-    echo " $G Installing GIT is SUCCESS $N"
+    echo "$G Installing GIT is SUCCESS $N"
 fi
