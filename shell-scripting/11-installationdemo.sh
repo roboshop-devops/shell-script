@@ -2,17 +2,17 @@
 
 ID=$(id -u)
 
-R="\e[31"
-G="\e[32"
-N="\e[0"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 VALIDATE (){
     if [ $1 -ne 0 ]
      then
-         echo -e"ERROR:: $2 .....$R FAILD $N"
+         echo -e "ERROR:: $2 .....$R FAILD $N"
          exit 1
     else
-        echo -e"$2 ..... $G SUCCESS $N"
+        echo -e "$2 ..... $G SUCCESS $N"
     fi
 }
 
