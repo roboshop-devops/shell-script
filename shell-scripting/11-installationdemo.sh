@@ -2,22 +2,26 @@
 
 ID=$(id -u)
 
+R="\e[31"
+G="\e[32"
+N="\e[0"
+
 VALIDATE (){
     if [ $1 -ne 0 ]
      then
-         echo "ERROR:: $2 ..... FAILD"
+         echo -e "ERROR:: $2 .....$R FAILD"
          exit 1
     else
-        echo "$2 ..... SUCCESS"
+        echo "$2 ..... $G SUCCESS"
     fi
 }
 
 if [ $ID -ne 0 ]
 then 
-    echo "ERROR:: run this script with root access"
+    echo "$RERROR:: run this script with root access"
     exit 1
 else
-    echo "you are root user"
+    echo "$Gyou are root user"
 fi
 
 yum install mysqll -y
