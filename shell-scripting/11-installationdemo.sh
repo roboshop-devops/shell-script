@@ -11,10 +11,10 @@ then
     echo "ERROR:: Please run this script with root access"
     exit 1 # you can give other than 0
 else
-    echo $G You are root user" $N
+    echo "$G You are root user $N"
 fi # fi means reverse of if, indicating condition end
 
-yum install mysqll -y
+yum install mysql -y
 
 if [ $? -ne 0 ]
 then
