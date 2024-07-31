@@ -9,19 +9,19 @@ N="\e[0"
 VALIDATE (){
     if [ $1 -ne 0 ]
      then
-         echo -e "ERROR:: $2 .....$R FAILD"
+         echo -e"ERROR:: $2 .....$R FAILD $N"
          exit 1
     else
-        echo "$2 ..... $G SUCCESS"
+        echo -e"$2 ..... $G SUCCESS $N"
     fi
 }
 
 if [ $ID -ne 0 ]
 then 
-    echo "$RERROR:: run this script with root access"
+    echo -e "$R ERROR:: run this script with root access $N"
     exit 1
 else
-    echo "$Gyou are root user"
+    echo -e "$G you are root user $N"
 fi
 
 yum install mysqll -y
