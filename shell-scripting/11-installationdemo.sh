@@ -2,8 +2,8 @@
 
 ID=$(id -u)
 
-R="\e[31m"
-G="\e[32m"
+R="\e[0;31m"
+G="\e[0;32m"
 N="\e[0m"
 
 if [ $ID -ne 0 ]
@@ -14,7 +14,7 @@ else
     echo "$G You are root user $N"
 fi # fi means reverse of if, indicating condition end
 
-yum install mysql -y
+yum install mysqll -y
 
 if [ $? -ne 0 ]
 then
