@@ -2,34 +2,28 @@
 
 ID=$(id -u)
 
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
+VALIDATE (){
+    
+if [ $1 -ne 0 ]
+then
+    echo "ERROR:: $2 ..... FAILD"
+else
+    echo "$2 ..... SUCCESS"
+fi
+}
 
 if [ $ID -ne 0 ]
-then
-    echo -e "ERROR:: Please run this script with root access"
-    exit 1 # you can give other than 0
-else
-    echo -e "$G You are root user $N"
-fi # fi means reverse of if, indicating condition end
-
-yum install mysqll -y
-
-if [ $? -ne 0 ]
-then
-    echo -e "ERROR:: $R Installing MySQL is failed $N"
+then 
+    echo "ERROR:: run this script with root access"
     exit 1
 else
-    echo -e "$G Installing MySQL is SUCCESS $N"
+    echo "you are root user"
 fi
 
-yum install gitt -y
+yum install mysql -y
 
-if [ $? -ne 0 ]
-then
-    echo -e "ERROR:: $R Installing GIT is failed $N"
-    exit 1
-else
-    echo -e "$G Installing GIT is SUCCESS $N"
-fi
+VALIDATE $1 mysql-installation
+
+yum install net-tools -y
+
+VALIDATE $1 net-tools-installation
