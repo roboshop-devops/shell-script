@@ -6,6 +6,9 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
+TIMESTAMP=(date +%F-%H-%m-%s)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
 VALIDATE (){
     if [ $1 -ne 0 ]
      then
@@ -16,7 +19,7 @@ VALIDATE (){
     fi
 }
 
-if [ $ID -ne 0 ]
+if [ $ID -ne 0 ]  &> $LOGFILE
 then 
     echo -e "$R ERROR:: run this script with root access $N"
     exit 1
@@ -24,10 +27,10 @@ else
     echo -e "$G you are root user $N"
 fi
 
-yum install mysql -y
+yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? mysql-installation
 
-yum install git -y
+yum install git -y  &>> $LOGFILE
 
 VALIDATE $? git-installation
