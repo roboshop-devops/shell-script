@@ -16,15 +16,5 @@ then
     echo "ERROR::Installation of MYSQL failed"
     EXIT 1
 else
-    echo "echo "Installed of MYSQL successfully"     
-fi
-
-yum isntall git -y
-
-if [ $? -ne 0 ]
-then
-    echo "ERROR::Installation of GIT failed"
-    EXIT 1
-else
-    echo "Installed of GIT successfully"     
+    echo "echo "Installationof MYSQL success"     
 fi
