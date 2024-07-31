@@ -22,8 +22,8 @@ fi
 
 yum install mysql -y
 
-VALIDATE $1 mysql-installation
+VALIDATE $? mysql-installation
 
-yum install net-tools -y
+yum install git -y
 
-VALIDATE $1 net-tools-installation
+VALIDATE $? git-installation
