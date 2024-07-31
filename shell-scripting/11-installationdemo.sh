@@ -20,7 +20,8 @@ VALIDATE (){
     fi
 }
 
-echo -e "$Y script started excuting at $TIMESTAMP $N" &>> $LOGFILE
+echo -e "$Y script started excuting at $TIMESTAMP $N"  &>> $LOGFILE
+
 
 if [ $ID -ne 0 ]  &> $LOGFILE
 then 
