@@ -4,9 +4,10 @@ ID=$(id -u)
 
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
-TIMESTAMP=(date +%F-%H-%m-%s)
+TIMESTAMP=(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 VALIDATE (){
@@ -18,6 +19,8 @@ VALIDATE (){
         echo -e "$2 ..... $G SUCCESS $N"
     fi
 }
+
+echo -e "$Y script started excuting at $TIMESTAMP $N" &>> $LOGFILE
 
 if [ $ID -ne 0 ]  &> $LOGFILE
 then 
