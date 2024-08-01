@@ -31,7 +31,7 @@ fi
 for package in $@ 
 do
     yum list installed package &>> $LOGFILE
-    if [ $? -ne 0]
+    if [ $? -ne 0 ]
     then
         echo "yum install $package -y" &>> $LOGFILE
         VALIADTE $? "installation of $pacakage"
