@@ -36,6 +36,6 @@ do
         echo "yum install $package -y" &>> $LOGFILE
         VALIADTE $? "installation of $package"
     else
-        echo "$package already installed ....$Y SKIPPING $N" 
+        echo -e "$package already installed ....$Y SKIPPING $N" 
     fi
 done
