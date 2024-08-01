@@ -10,6 +10,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/$0-$TIMESTAMP.log
 
 echo -e "$Y script started executing at $N ::$R $TIMESTAMP $N"
+
 VALIADTE=(){
     if [ $1 -ne 0 ]
     then 
