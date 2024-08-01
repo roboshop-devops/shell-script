@@ -34,7 +34,7 @@ do
     if [ $? -ne 0 ]
     then
         echo "yum install $package -y" &>> $LOGFILE
-        VALIADTE $? "installation of $pacakage"
+        VALIADTE $? "installation of $package"
     else
         echo "$package already installed ....$Y SKIPPING $N" 
     fi
